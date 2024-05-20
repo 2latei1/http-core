@@ -365,7 +365,7 @@ table.tcenter {
 caption {
   caption-side: bottom;
   font-weight: bold;
-  font-size: 80%;
+  font-size: %;
   margin-top: .5em;
 }
 
@@ -488,7 +488,7 @@ section.rfcEditorRemove > div:first-of-type {
 .figure {
   font-weight: bold;
   text-align: center;
-  font-size: 80%;
+  font-size: %;
 }
 .filename {
   color: #333333;
@@ -1397,7 +1397,7 @@ Content-Type: text/plain
             </div>
             <div id="rfc.section.2.2.p.9">
                <p><span id="rfc.iref.i.2"></span> <span id="rfc.iref.t.2"></span> <span id="rfc.iref.c.2"></span> For example, an "<dfn>interception proxy</dfn>" <a href="#RFC3040" id="rfc.xref.RFC3040.1"><cite title="Internet Web Replication and Caching Taxonomy">[RFC3040]</cite></a> (also commonly known as a "<dfn>transparent proxy</dfn>" <a href="#RFC1919" id="rfc.xref.RFC1919.1"><cite title="Classical versus Transparent IP Proxies">[RFC1919]</cite></a> or "<dfn>captive portal</dfn>") differs from an HTTP proxy because it is not selected by the client. Instead, an
-                  interception proxy filters or redirects outgoing TCP port 80 packets (and occasionally
+                  interception proxy filters or redirects outgoing TCP port  packets (and occasionally
                   other common port traffic). Interception proxies are commonly found on public network
                   access points, as a means of enforcing account subscription prior to allowing use
                   of non-local Internet services, and within corporate firewalls to enforce network
@@ -1545,7 +1545,7 @@ Content-Type: text/plain
                      (if any) on the indicated TCP port at that IP address. If host is a registered name,
                      the registered name is an indirect identifier for use with a name resolution service,
                      such as DNS, to find an address for that origin server. If the port subcomponent is
-                     empty or not given, TCP port 80 (the reserved port for WWW services) is the default.<a class="self" href="#rfc.section.2.5.1.p.5">¶</a></p>
+                     empty or not given, TCP port  (the reserved port for WWW services) is the default.<a class="self" href="#rfc.section.2.5.1.p.5">¶</a></p>
                </div>
                <div id="rfc.section.2.5.1.p.6">
                   <p>Note that the presence of a URI with a given authority component does not imply that
@@ -1647,7 +1647,7 @@ Content-Type: text/plain
                <div id="rfc.section.2.5.4.p.3" class="avoidbreakafter">
                   <p>For example, the following three URIs are equivalent:<a class="self" href="#rfc.section.2.5.4.p.3">¶</a></p>
                </div>
-               <div id="rfc.section.2.5.4.p.4"><pre class="text">   http://example.com:80/~smith/home.html
+               <div id="rfc.section.2.5.4.p.4"><pre class="text">   http://example.com:/~smith/home.html
    http://EXAMPLE.com/%7Esmith/home.html
    http://EXAMPLE.com:/%7esmith/home.html
 </pre></div>
@@ -2397,7 +2397,7 @@ Content-Type: text/plain
                   </div>
                   <div id="rfc.section.4.2.3.2.p.2"><pre class="inline prettyprint lang-ietf_abnf"><span id="rfc.iref.g.19"></span><span id="rfc.iref.g.20"></span><span id="rfc.iref.g.21"></span>  <a href="#rule.quoted-string" class="smpl">quoted-string</a>  = <a href="#core.rules" class="smpl">DQUOTE</a> *( <a href="#rule.quoted-string" class="smpl">qdtext</a> / <a href="#rule.quoted-pair" class="smpl">quoted-pair</a> ) <a href="#core.rules" class="smpl">DQUOTE</a>
   <a href="#rule.quoted-string" class="smpl">qdtext</a>         = <a href="#core.rules" class="smpl">HTAB</a> / <a href="#core.rules" class="smpl">SP</a> / %x21 / %x23-5B / %x5D-7E / <a href="#rule.quoted-string" class="smpl">obs-text</a>
-  <a href="#rule.quoted-string" class="smpl">obs-text</a>       = %x80-FF
+  <a href="#rule.quoted-string" class="smpl">obs-text</a>       = %x-FF
 </pre></div>
                   <div id="rfc.section.4.2.3.2.p.3">
                      <p id="rule.quoted-pair"> The backslash octet ("\") can be used as a single-octet quoting mechanism within quoted-string
@@ -4559,8 +4559,8 @@ Content-Range: exampleunit 11.2-14.3/25
                   <p>A client sending a CONNECT request <em class="bcp14">MUST</em> send the authority form of request-target (<a href="draft-ietf-httpbis-messaging-latest.html#request.target" title="Request Target">Section 3.2</a> of <a href="#Messaging" id="rfc.xref.Messaging.33"><cite title="HTTP/1.1 Messaging">[Messaging]</cite></a>); i.e., the request-target consists of only the host name and port number of the
                      tunnel destination, separated by a colon. For example,<a class="self" href="#rfc.section.7.3.6.p.3">¶</a></p>
                </div>
-               <div id="rfc.section.7.3.6.p.4"><pre class="text2">CONNECT server.example.com:80 HTTP/1.1
-Host: server.example.com:80
+               <div id="rfc.section.7.3.6.p.4"><pre class="text2">CONNECT server.example.com: HTTP/1.1
+Host: server.example.com:
 
 </pre></div>
                <div id="rfc.section.7.3.6.p.5">
@@ -4581,8 +4581,8 @@ Host: server.example.com:80
                   <p>Proxy authentication might be used to establish the authority to create a tunnel.
                      For example,<a class="self" href="#rfc.section.7.3.6.p.7">¶</a></p>
                </div>
-               <div id="rfc.section.7.3.6.p.8"><pre class="text2">CONNECT server.example.com:80 HTTP/1.1
-Host: server.example.com:80
+               <div id="rfc.section.7.3.6.p.8"><pre class="text2">CONNECT server.example.com: HTTP/1.1
+Host: server.example.com:
 Proxy-Authorization: basic aGVsbG86d29ybGQ=
 
 </pre></div>
@@ -5528,7 +5528,7 @@ Expect: 100-continue
                      that the request is specifically limited to a small set of desired types, as in the
                      case of a request for an in-line image.<a class="self" href="#rfc.section.8.4.2.p.1">¶</a></p>
                </div>
-               <div id="rfc.section.8.4.2.p.2"><pre class="inline prettyprint lang-ietf_abnf"><span id="rfc.iref.g.80"></span><span id="rfc.iref.g.81"></span><span id="rfc.iref.g.82"></span><span id="rfc.iref.g.83"></span>  <a href="#header.accept" class="smpl">Accept</a> = #( <a href="#header.accept" class="smpl">media-range</a> [ <a href="#header.accept" class="smpl">accept-params</a> ] )
+               <div id="rfc.section.8.4.2.p.2"><pre class="inline prettyprint lang-ietf_abnf"><span id="rfc.iref.g."></span><span id="rfc.iref.g.81"></span><span id="rfc.iref.g.82"></span><span id="rfc.iref.g.83"></span>  <a href="#header.accept" class="smpl">Accept</a> = #( <a href="#header.accept" class="smpl">media-range</a> [ <a href="#header.accept" class="smpl">accept-params</a> ] )
   
   <a href="#header.accept" class="smpl">media-range</a>    = ( "*/*"
                    / ( <a href="#media.type" class="smpl">type</a> "/" "*" )
@@ -5567,7 +5567,7 @@ Expect: 100-continue
 </pre></div>
                <div id="rfc.section.8.4.2.p.8">
                   <p>is interpreted as "I prefer audio/basic, but send me any audio type if it is the best
-                     available after an 80% markdown in quality".<a class="self" href="#rfc.section.8.4.2.p.8">¶</a></p>
+                     available after an % markdown in quality".<a class="self" href="#rfc.section.8.4.2.p.8">¶</a></p>
                </div>
                <div id="rfc.section.8.4.2.p.9">
                   <p>A more elaborate example is<a class="self" href="#rfc.section.8.4.2.p.9">¶</a></p>
@@ -6840,12 +6840,12 @@ Content-Type: multipart/byteranges; boundary=THIS_STRING_SEPARATES
 
 --THIS_STRING_SEPARATES
 Content-Type: application/pdf
-Content-Range: bytes 500-999/8000
+Content-Range: bytes 500-999/00
 
 ...the first range...
 --THIS_STRING_SEPARATES
 Content-Type: application/pdf
-Content-Range: bytes 7000-7999/8000
+Content-Range: bytes 7000-7999/00
 
 ...the second range
 --THIS_STRING_SEPARATES--
@@ -6854,7 +6854,7 @@ Content-Range: bytes 7000-7999/8000
                      <p>When multiple ranges are requested, a server <em class="bcp14">MAY</em> coalesce any of the ranges that overlap, or that are separated by a gap that is smaller
                         than the overhead of sending multiple parts, regardless of the order in which the
                         corresponding range-spec appeared in the received <a href="#header.range" class="smpl">Range</a> header field. Since the typical overhead between parts of a multipart/byteranges payload
-                        is around 80 bytes, depending on the selected representation's media type and the
+                        is around  bytes, depending on the selected representation's media type and the
                         chosen boundary parameter length, it can be less efficient to transfer many small
                         disjoint parts than it is to transfer the entire selected representation.<a class="self" href="#rfc.section.9.3.7.2.p.4">¶</a></p>
                   </div>
@@ -9655,7 +9655,7 @@ Content-Encoding: gzip
 
 <a href="#obsolete.date.formats" class="smpl">obs-date</a> = rfc850-date / asctime-date
 <a href="#imported.rules" class="smpl">obs-fold</a> = &lt;obs-fold, see <a href="#Messaging" id="rfc.xref.Messaging.50"><cite title="HTTP/1.1 Messaging">[Messaging]</cite></a>, <a href="draft-ietf-httpbis-messaging-latest.html#rfc.section.5.2">Section 5.2</a>&gt;
-<a href="#rule.quoted-string" class="smpl">obs-text</a> = %x80-FF
+<a href="#rule.quoted-string" class="smpl">obs-text</a> = %x-FF
 <a href="#header.etag" class="smpl">opaque-tag</a> = DQUOTE *etagc DQUOTE
 <a href="#rule.other-range" class="smpl">other-range</a> = 1*( %x21-2B ; '!'-'+'
  / %x2D-7E ; '-'-'~'
@@ -9852,7 +9852,7 @@ Content-Encoding: gzip
                   </li>
                   <li>Cite RFC 7578 instead of RFC 2388 (&lt;<a href="https://github.com/httpwg/http-core/issues/79">https://github.com/httpwg/http-core/issues/79</a>&gt;)
                   </li>
-                  <li>Cite RFC 7595 instead of RFC 4395 (&lt;<a href="https://github.com/httpwg/http-core/issues/80">https://github.com/httpwg/http-core/issues/80</a>&gt;)
+                  <li>Cite RFC 7595 instead of RFC 4395 (&lt;<a href="https://github.com/httpwg/http-core/issues/">https://github.com/httpwg/http-core/issues/</a>&gt;)
                   </li>
                   <li>improve ABNF readability for qdtext (&lt;<a href="https://github.com/httpwg/http-core/issues/81">https://github.com/httpwg/http-core/issues/81</a>&gt;, &lt;<a href="https://www.rfc-editor.org/errata/eid4891">https://www.rfc-editor.org/errata/eid4891</a>&gt;)
                   </li>
@@ -9973,7 +9973,7 @@ Content-Encoding: gzip
                   </li>
                   <li>In <a href="#status.403" id="rfc.xref.status.403.3" title="403 Forbidden">Section 9.5.4</a>, replace "authorize" with "fulfill" (&lt;<a href="https://github.com/httpwg/http-core/issues/218">https://github.com/httpwg/http-core/issues/218</a>&gt;)
                   </li>
-                  <li>In <a href="#OPTIONS" id="rfc.xref.OPTIONS.6" title="OPTIONS">Section 7.3.7</a>, removed a misleading statement about Content-Length (&lt;<a href="https://github.com/httpwg/http-core/issues/235">https://github.com/httpwg/http-core/issues/235</a>&gt;, &lt;<a href="https://www.rfc-editor.org/errata/eid5806">https://www.rfc-editor.org/errata/eid5806</a>&gt;)
+                  <li>In <a href="#OPTIONS" id="rfc.xref.OPTIONS.6" title="OPTIONS">Section 7.3.7</a>, removed a misleading statement about Content-Length (&lt;<a href="https://github.com/httpwg/http-core/issues/235">https://github.com/httpwg/http-core/issues/235</a>&gt;, &lt;<a href="https://www.rfc-editor.org/errata/eid56">https://www.rfc-editor.org/errata/eid56</a>&gt;)
                   </li>
                   <li>Changed "cacheable by default" to "heuristically cacheable" throughout (&lt;<a href="https://github.com/httpwg/http-core/issues/242">https://github.com/httpwg/http-core/issues/242</a>&gt;)
                   </li>
@@ -10167,7 +10167,7 @@ Content-Encoding: gzip
                         <ul>
                            <li><span class="tt">absolute-path</span>&nbsp;&nbsp;<a href="#rfc.iref.g.5"><b>2.4</b></a></li>
                            <li><span class="tt">absolute-URI</span>&nbsp;&nbsp;<a href="#rfc.iref.g.3"><b>2.4</b></a></li>
-                           <li><span class="tt">Accept</span>&nbsp;&nbsp;<a href="#rfc.iref.g.80"><b>8.4.2</b></a></li>
+                           <li><span class="tt">Accept</span>&nbsp;&nbsp;<a href="#rfc.iref.g."><b>8.4.2</b></a></li>
                            <li><span class="tt">Accept-Charset</span>&nbsp;&nbsp;<a href="#rfc.iref.g.84"><b>8.4.3</b></a></li>
                            <li><span class="tt">Accept-Encoding</span>&nbsp;&nbsp;<a href="#rfc.iref.g.85"><b>8.4.4</b></a></li>
                            <li><span class="tt">accept-ext</span>&nbsp;&nbsp;<a href="#rfc.iref.g.83"><b>8.4.2</b></a></li>

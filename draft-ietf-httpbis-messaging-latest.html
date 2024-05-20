@@ -365,7 +365,7 @@ table.tcenter {
 caption {
   caption-side: bottom;
   font-weight: bold;
-  font-size: 80%;
+  font-size: %;
   margin-top: .5em;
 }
 
@@ -488,7 +488,7 @@ section.rfcEditorRemove > div:first-of-type {
 .figure {
   font-weight: bold;
   text-align: center;
-  font-size: 80%;
+  font-size: %;
 }
 .filename {
   color: #333333;
@@ -1129,7 +1129,7 @@ h1:hover > a.self, h2:hover > a.self, h3:hover > a.self, li:hover > a.self, p:ho
          </div>
          <div id="rfc.section.3.p.5">
             <p>Various ad hoc limitations on request-line length are found in practice. It is <em class="bcp14">RECOMMENDED</em> that all HTTP senders and recipients support, at a minimum, request-line lengths of
-               8000 octets.<a class="self" href="#rfc.section.3.p.5">¶</a></p>
+               00 octets.<a class="self" href="#rfc.section.3.p.5">¶</a></p>
          </div>
          <section id="request.method">
             <h3 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a>&nbsp;<a href="#request.method">Method</a></h3>
@@ -1186,7 +1186,7 @@ h1:hover > a.self, h2:hover > a.self, h3:hover > a.self, li:hover > a.self, p:ho
                <div id="rfc.section.3.2.1.p.5"><pre class="text">http://www.example.org/where?q=now
 </pre></div>
                <div id="rfc.section.3.2.1.p.6" class="avoidbreakafter">
-                  <p>directly from the origin server would open (or reuse) a TCP connection to port 80
+                  <p>directly from the origin server would open (or reuse) a TCP connection to port 
                      of the host "www.example.org" and send the lines:<a class="self" href="#rfc.section.3.2.1.p.6">¶</a></p>
                </div>
                <div id="rfc.section.3.2.1.p.7"><pre class="text2">GET /where?q=now HTTP/1.1
@@ -1233,7 +1233,7 @@ Host: www.example.org
                      client <em class="bcp14">MUST</em> send only the target URI's authority component (excluding any userinfo and its "@"
                      delimiter) as the request-target. For example,<a class="self" href="#rfc.section.3.2.3.p.3">¶</a></p>
                </div>
-               <div id="rfc.section.3.2.3.p.4"><pre class="text2">CONNECT www.example.com:80 HTTP/1.1
+               <div id="rfc.section.3.2.3.p.4"><pre class="text2">CONNECT www.example.com: HTTP/1.1
 </pre></div>
             </section>
             <section id="asterisk-form">
@@ -1258,16 +1258,16 @@ Host: www.example.org
                <div id="rfc.section.3.2.4.p.6">
                   <p>For example, the request<a class="self" href="#rfc.section.3.2.4.p.6">¶</a></p>
                </div>
-               <div id="rfc.section.3.2.4.p.7"><pre class="text2">OPTIONS http://www.example.org:8001 HTTP/1.1
+               <div id="rfc.section.3.2.4.p.7"><pre class="text2">OPTIONS http://www.example.org:01 HTTP/1.1
 </pre></div>
                <div id="rfc.section.3.2.4.p.8">
                   <p>would be forwarded by the final proxy as<a class="self" href="#rfc.section.3.2.4.p.8">¶</a></p>
                </div>
                <div id="rfc.section.3.2.4.p.9"><pre class="text2">OPTIONS * HTTP/1.1
-Host: www.example.org:8001
+Host: www.example.org:01
 </pre></div>
                <div id="rfc.section.3.2.4.p.10">
-                  <p>after connecting to port 8001 of host "www.example.org".<a class="self" href="#rfc.section.3.2.4.p.10">¶</a></p>
+                  <p>after connecting to port 01 of host "www.example.org".<a class="self" href="#rfc.section.3.2.4.p.10">¶</a></p>
                </div>
             </section>
          </section>
@@ -1308,12 +1308,12 @@ Host: www.example.org:8001
                <p>Example 1: the following message received over an insecure TCP connection<a class="self" href="#rfc.section.3.3.p.4">¶</a></p>
             </div>
             <div id="rfc.section.3.3.p.5"><pre class="text">GET /pub/WWW/TheProject.html HTTP/1.1
-Host: www.example.org:8080
+Host: www.example.org:
 </pre></div>
             <div id="rfc.section.3.3.p.6">
                <p>has an effective request URI of<a class="self" href="#rfc.section.3.3.p.6">¶</a></p>
             </div>
-            <div id="rfc.section.3.3.p.7"><pre class="text">http://www.example.org:8080/pub/WWW/TheProject.html
+            <div id="rfc.section.3.3.p.7"><pre class="text">http://www.example.org:/pub/WWW/TheProject.html
 </pre></div>
             <div id="rfc.section.3.3.p.8">
                <p>Example 2: the following message received over a TLS-secured TCP connection<a class="self" href="#rfc.section.3.3.p.8">¶</a></p>
@@ -2062,7 +2062,7 @@ Host: www.example.org
          </div>
          <div id="rfc.section.9.p.2">
             <p>As described in <a href="draft-ietf-httpbis-semantics-latest.html#routing.inbound" title="Routing Inbound">Section 5.2</a> of <a href="#Semantics" id="rfc.xref.Semantics.42"><cite title="HTTP Semantics">[Semantics]</cite></a>, the specific connection protocols to be used for an HTTP interaction are determined
-               by client configuration and the <a href="draft-ietf-httpbis-semantics-latest.html#target.resource" class="smpl">target URI</a>. For example, the "http" URI scheme (<a href="draft-ietf-httpbis-semantics-latest.html#http.uri" title="http URI Scheme">Section 2.5.1</a> of <a href="#Semantics" id="rfc.xref.Semantics.43"><cite title="HTTP Semantics">[Semantics]</cite></a>) indicates a default connection of TCP over IP, with a default TCP port of 80, but
+               by client configuration and the <a href="draft-ietf-httpbis-semantics-latest.html#target.resource" class="smpl">target URI</a>. For example, the "http" URI scheme (<a href="draft-ietf-httpbis-semantics-latest.html#http.uri" title="http URI Scheme">Section 2.5.1</a> of <a href="#Semantics" id="rfc.xref.Semantics.43"><cite title="HTTP Semantics">[Semantics]</cite></a>) indicates a default connection of TCP over IP, with a default TCP port of , but
                the client might be configured to use a proxy via some other connection, port, or
                protocol.<a class="self" href="#rfc.section.9.p.2">¶</a></p>
          </div>

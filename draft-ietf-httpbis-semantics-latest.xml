@@ -535,7 +535,7 @@ Content-Type: text/plain
    known as a "<x:dfn>transparent proxy</x:dfn>" <xref target="RFC1919"/> or
    "<x:dfn>captive portal</x:dfn>")
    differs from an HTTP proxy because it is not selected by the client.
-   Instead, an interception proxy filters or redirects outgoing TCP port 80
+   Instead, an interception proxy filters or redirects outgoing TCP port 
    packets (and occasionally other common port traffic).
    Interception proxies are commonly found on public network access points,
    as a means of enforcing account subscription prior to allowing use of
@@ -729,7 +729,7 @@ Content-Type: text/plain
    If host is a registered name, the registered name is an indirect identifier
    for use with a name resolution service, such as DNS, to find an address for
    that origin server.
-   If the port subcomponent is empty or not given, TCP port 80 (the
+   If the port subcomponent is empty or not given, TCP port  (the
    reserved port for WWW services) is the default.
 </t>
 <t>
@@ -869,7 +869,7 @@ Content-Type: text/plain
    For example, the following three URIs are equivalent:
 </t>
 <artwork type="example">
-   http://example.com:80/~smith/home.html
+   http://example.com:/~smith/home.html
    http://EXAMPLE.com/%7Esmith/home.html
    http://EXAMPLE.com:/%7esmith/home.html
 </artwork>
@@ -1690,7 +1690,7 @@ deployed and not likely to be registered in a timely manner otherwise.</t>
 <sourcecode type="abnf7230"><iref primary="true" item="Grammar" subitem="quoted-string"/><iref primary="true" item="Grammar" subitem="qdtext"/><iref primary="true" item="Grammar" subitem="obs-text"/>
   <x:ref>quoted-string</x:ref>  = <x:ref>DQUOTE</x:ref> *( <x:ref>qdtext</x:ref> / <x:ref>quoted-pair</x:ref> ) <x:ref>DQUOTE</x:ref>
   <x:ref>qdtext</x:ref>         = <x:ref>HTAB</x:ref> / <x:ref>SP</x:ref> / %x21 / %x23-5B / %x5D-7E / <x:ref>obs-text</x:ref>
-  <x:ref>obs-text</x:ref>       = %x80-FF
+  <x:ref>obs-text</x:ref>       = %x-FF
 </sourcecode>
 <t anchor="rule.quoted-pair">
   <x:anchor-alias value="quoted-pair"/>
@@ -4377,8 +4377,8 @@ Content-Range: exampleunit 11.2-14.3/25
    by a colon. For example,
 </t>
 <artwork type="message/http; msgtype=&#34;request&#34;" x:indent-with="  ">
-CONNECT server.example.com:80 HTTP/1.1
-Host: server.example.com:80
+CONNECT server.example.com: HTTP/1.1
+Host: server.example.com:
 
 </artwork>
 <t>
@@ -4404,8 +4404,8 @@ Host: server.example.com:80
    authority to create a tunnel.  For example,
 </t>
 <artwork type="message/http; msgtype=&#34;request&#34;" x:indent-with="  ">
-CONNECT server.example.com:80 HTTP/1.1
-Host: server.example.com:80
+CONNECT server.example.com: HTTP/1.1
+Host: server.example.com:
 Proxy-Authorization: basic aGVsbG86d29ybGQ=
 
 </artwork>
@@ -5630,7 +5630,7 @@ Expect: 100-continue
 </artwork>
 <t>
    is interpreted as "I prefer audio/basic, but send me any audio
-   type if it is the best available after an 80% markdown in quality".
+   type if it is the best available after an % markdown in quality".
 </t>
 <t>
    A more elaborate example is
@@ -7194,12 +7194,12 @@ Content-Type: multipart/byteranges; boundary=THIS_STRING_SEPARATES
 
 --THIS_STRING_SEPARATES
 Content-Type: application/pdf
-Content-Range: bytes 500-999/8000
+Content-Range: bytes 500-999/00
 
 ...the first range...
 --THIS_STRING_SEPARATES
 Content-Type: application/pdf
-Content-Range: bytes 7000-7999/8000
+Content-Range: bytes 7000-7999/00
 
 ...the second range
 --THIS_STRING_SEPARATES--
@@ -7210,7 +7210,7 @@ Content-Range: bytes 7000-7999/8000
    overhead of sending multiple parts, regardless of the order in which the
    corresponding range-spec appeared in the received <x:ref>Range</x:ref>
    header field. Since the typical overhead between parts of a
-   multipart/byteranges payload is around 80 bytes, depending on the selected
+   multipart/byteranges payload is around  bytes, depending on the selected
    representation's media type and the chosen boundary parameter length, it
    can be less efficient to transfer many small disjoint parts than it is to
    transfer the entire selected representation.
@@ -11430,7 +11430,7 @@ Content-Encoding: gzip
 
 <x:ref>obs-date</x:ref> = rfc850-date / asctime-date
 <x:ref>obs-fold</x:ref> = &lt;obs-fold, see <xref target="Messaging" x:fmt="," x:sec="5.2"/>&gt;
-<x:ref>obs-text</x:ref> = %x80-FF
+<x:ref>obs-text</x:ref> = %x-FF
 <x:ref>opaque-tag</x:ref> = DQUOTE *etagc DQUOTE
 <x:ref>other-range</x:ref> = 1*( %x21-2B ; '!'-'+'
  / %x2D-7E ; '-'-'~'
@@ -11612,7 +11612,7 @@ Content-Encoding: gzip
   <li>Cite RFC 8288 instead of RFC 5988 (<eref target="https://github.com/httpwg/http-core/issues/77"/>)</li>
   <li>Cite RFC 8187 instead of RFC 5987 (<eref target="https://github.com/httpwg/http-core/issues/78"/>)</li>
   <li>Cite RFC 7578 instead of RFC 2388 (<eref target="https://github.com/httpwg/http-core/issues/79"/>)</li>
-  <li>Cite RFC 7595 instead of RFC 4395 (<eref target="https://github.com/httpwg/http-core/issues/80"/>)</li>
+  <li>Cite RFC 7595 instead of RFC 4395 (<eref target="https://github.com/httpwg/http-core/issues/"/>)</li>
   <li>improve ABNF readability for qdtext (<eref target="https://github.com/httpwg/http-core/issues/81"/>, <eref target="https://www.rfc-editor.org/errata/eid4891"/>)</li>
   <li>Clarify "resource" vs "representation" in definition of status code 416 (<eref target="https://github.com/httpwg/http-core/issues/83"/>, <eref target="https://www.rfc-editor.org/errata/eid4664"/>)</li>
   <li>Resolved erratum 4072, no change needed here (<eref target="https://github.com/httpwg/http-core/issues/84"/>, <eref target="https://www.rfc-editor.org/errata/eid4072"/>)</li>
@@ -11678,7 +11678,7 @@ Content-Encoding: gzip
   <li>In <xref target="cacheable.methods"/>, remove concept of "cacheable methods" in favor of prose (<eref target="https://github.com/httpwg/http-core/issues/54"/>)</li>
   <li>In <xref target="range.units"/>, refactored the range-unit and ranges-specifier grammars (<eref target="https://github.com/httpwg/http-core/issues/196"/>)</li>
   <li>In <xref target="status.403"/>, replace "authorize" with "fulfill" (<eref target="https://github.com/httpwg/http-core/issues/218"/>)</li>
-  <li>In <xref target="OPTIONS"/>, removed a misleading statement about Content-Length (<eref target="https://github.com/httpwg/http-core/issues/235"/>, <eref target="https://www.rfc-editor.org/errata/eid5806"/>)</li>
+  <li>In <xref target="OPTIONS"/>, removed a misleading statement about Content-Length (<eref target="https://github.com/httpwg/http-core/issues/235"/>, <eref target="https://www.rfc-editor.org/errata/eid56"/>)</li>
   <li>Changed "cacheable by default" to "heuristically cacheable" throughout (<eref target="https://github.com/httpwg/http-core/issues/242"/>)</li>
 </ul>
 </section>
